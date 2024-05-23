@@ -1,13 +1,13 @@
 {% set name = "pydataverse" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyDataverse-{{ version }}.tar.gz
-  sha256: 1b8b8a0ec662d483eb5d948007cbeab6eb9b75dfb5aa3af88cc9b3abe9d938c9
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d5f959735a70d2f955aa354da29f2f851406dffae915f31277cd01ae2b030c99
 
 build:
   noarch: python

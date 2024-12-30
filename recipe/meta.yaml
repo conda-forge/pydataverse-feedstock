@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d5f959735a70d2f955aa354da29f2f851406dffae915f31277cd01ae2b030c99
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - poetry
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - httpx >=0.27.0
     - jsonschema >=4.21.1
 
@@ -32,6 +32,7 @@ test:
   requires:
     - pip
     - poetry
+    - python {{ python_min }}
 
 about:
   home: https://github.com/gdcc/pyDataverse
